@@ -22,11 +22,11 @@ Route::middleware('auth')->group(function () {
     Route::post('employee', [App\Http\Controllers\employeecontroller::class, 'index']);
     Route::get('users', [\App\Http\Controllers\UserController::class, 'index'])->name('users.index');
     Route::get('employee', [App\Http\Controllers\employeecontroller::class, 'index'])->name('employee.index');
-    Route::get('employees/created', [App\Http\Controllers\employeecontroller::class, 'create'])->name('employee.create');
-    Route::post('employee', [App\Http\Controllers\employeecontroller::class, 'store'])->named('employee.store');
+    Route::get('employee/create', [App\Http\Controllers\employeecontroller::class, 'create'])->name('employee.create');
+    Route::post('employee', [App\Http\Controllers\employeecontroller::class, 'store'])->name('employee.store');
     Route::get('employee/{id}/edit', [App\Http\Controllers\employeecontroller::class, 'edit'])->name('employee.edit');
-    Route::put('employee/{id}/update', [App\Http\Controllers\employeecontroller::class, 'edit'])->name('employee.update');
-    Route::get('employee/{id}/destroy', [App\Http\Controllers\employeecontroller::class, 'destroy'])->named('employee.delete');
+    Route::put('employee/{id}/edit', [App\Http\Controllers\employeecontroller::class, 'update'])->name('employee.update');
+    Route::get('employee/{id}/delete', [App\Http\Controllers\employeecontroller::class, 'destroy'])->name('employee.delete');
 
     
 
